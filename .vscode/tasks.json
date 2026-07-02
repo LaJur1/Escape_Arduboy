@@ -4,14 +4,11 @@
         {
             "label": "Build (Hardware SSD1309)",
             "type": "shell",
-            "command": "${env:LOCALAPPDATA}\\Programs\\Arduino IDE\\resources\\app\\lib\\backend\\resources\\arduino-cli.exe",
+            "command": "PowerShell",
             "args": [
-                "compile",
-                "--fqbn",
-                "arduboy-homemade:avr:arduboy-homemade:display=ssd1309",
-                "--output-dir",
-                "${workspaceFolder}\\build\\arduboy-homemade.avr.arduboy-homemade",
-                "${workspaceFolder}"
+                "-ExecutionPolicy", "Bypass",
+                "-File", "${workspaceFolder}\\.vscode\\build.ps1",
+                "-Display", "ssd1309"
             ],
             "group": {
                 "kind": "build",
@@ -29,14 +26,11 @@
         {
             "label": "Build (Hardware SH1106)",
             "type": "shell",
-            "command": "${env:LOCALAPPDATA}\\Programs\\Arduino IDE\\resources\\app\\lib\\backend\\resources\\arduino-cli.exe",
+            "command": "PowerShell",
             "args": [
-                "compile",
-                "--fqbn",
-                "arduboy-homemade:avr:arduboy-homemade:display=sh1106",
-                "--output-dir",
-                "${workspaceFolder}\\build\\arduboy-homemade.avr.arduboy-homemade-sh1106",
-                "${workspaceFolder}"
+                "-ExecutionPolicy", "Bypass",
+                "-File", "${workspaceFolder}\\.vscode\\build.ps1",
+                "-Display", "sh1106"
             ],
             "group": "build",
             "presentation": {
@@ -53,10 +47,9 @@
             "type": "shell",
             "command": "PowerShell",
             "args": [
-                "-ExecutionPolicy",
-                "Bypass",
-                "-File",
-                "${workspaceFolder}\\.vscode\\launch_ardens.ps1"
+                "-ExecutionPolicy", "Bypass",
+                "-File", "${workspaceFolder}\\.vscode\\launch_ardens.ps1",
+                "-Display", "sh1106"
             ],
             "group": "none",
             "presentation": {
