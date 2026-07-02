@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build (Hardware SSD1309)",
+            "type": "shell",
+            "command": "${env:LOCALAPPDATA}\\Programs\\Arduino IDE\\resources\\app\\lib\\backend\\resources\\arduino-cli.exe",
+            "args": [
+                "compile",
+                "--fqbn",
+                "arduboy-homemade:avr:arduboy-homemade:display=ssd1309",
+                "--output-dir",
+                "${workspaceFolder}\\build\\arduboy-homemade.avr.arduboy-homemade",
+                "${workspaceFolder}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build (Hardware SH1106)",
+            "type": "shell",
+            "command": "${env:LOCALAPPDATA}\\Programs\\Arduino IDE\\resources\\app\\lib\\backend\\resources\\arduino-cli.exe",
+            "args": [
+                "compile",
+                "--fqbn",
+                "arduboy-homemade:avr:arduboy-homemade:display=sh1106",
+                "--output-dir",
+                "${workspaceFolder}\\build\\arduboy-homemade.avr.arduboy-homemade-sh1106",
+                "${workspaceFolder}"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Simulate in Ardens",
+            "type": "shell",
+            "command": "PowerShell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\.vscode\\launch_ardens.ps1"
+            ],
+            "group": "none",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
